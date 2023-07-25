@@ -46,7 +46,8 @@ const upload = multer({ storage });
 
 // -- ROUTES WITH FILES
 app.get('/',(req,res)=>{
-  console.log("Hello")
+  res.json({
+    message : "Hello "})
 })
 app.post('/auth/register', upload.single('picture'), register);
 app.post('/posts', verifyToken, upload.single('picture'), createPost);
